@@ -1,5 +1,6 @@
 import numpy as np
 from sklearn.metrics import accuracy_score
+import matplotlib.pyplot as plt
 
 # ==========================================
 # Step 1: Checkerboard Data
@@ -53,3 +54,7 @@ z = np.sign(data_RKS @ w)
 acc = accuracy_score(d, z) * 100
 
 print("Checkerboard Accuracy =", acc)
+plt.scatter(X[:,0], X[:,1], c=d.flatten())
+plt.title("Checkerboard Dataset")
+plt.savefig("checkerboard_dataset.png")
+plt.show()

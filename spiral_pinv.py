@@ -1,5 +1,7 @@
 import numpy as np
 from sklearn.metrics import accuracy_score
+import matplotlib.pyplot as plt
+
 
 # ==========================================
 # Step 1: Generate Spiral Dataset
@@ -58,3 +60,7 @@ z = np.sign(data_RKS @ w)
 acc = accuracy_score(d, z) * 100
 
 print("Accuracy =", acc)
+plt.scatter(A[:,0], A[:,1], c=d.flatten())
+plt.title("Two Spiral Dataset")
+plt.savefig("spiral_dataset.png")
+plt.show()
